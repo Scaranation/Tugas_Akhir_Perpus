@@ -1,0 +1,20 @@
+[
+  {
+    "judul": "3",
+    "pengarang": "3",
+    "penerbit": "3",
+    "jumlahHalaman": 3,
+    "stok": 2,
+    "rak": "3",
+    "harga": 3
+  },
+  {
+    "judul": "2",
+    "pengarang": "2",
+    "penerbit": "2",
+    "jumlahHalaman": 2,
+    "stok": 2,
+    "rak": "2",
+    "harga": 2
+  }
+]
