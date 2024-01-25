@@ -81,6 +81,7 @@ public class PeminjamanView {
                     PeminjamanEntity peminjaman = new PeminjamanEntity(orang, objPerpustakaan.cariBukubyJudul(judul), lama, total);
                     objPeminjam.tambahPeminjaman(peminjaman);
                     System.out.println("Peminjaman Berhasil");
+                    input.nextLine();
                     System.out.println("\n============================");
                 } else {
                     System.out.println("Stok buku habis");
