@@ -27,7 +27,7 @@ public class PengunjungView {
             }
         }while (!pilih.equals("2"));
     }
-    private void menuCari(){
+    public void menuCari(){
         try{
             String pilih;
             do{

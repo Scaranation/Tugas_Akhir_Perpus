@@ -20,12 +20,6 @@ public class PerpustakaanModel {
         loadData();
     }
 
-//    public void editBuku() {
-//        for (BukuEntity buku : allArrayBuku()) {
-//
-//        }
-//    }
-
     public void editBuku(String judul, String newJudul, String pengarang, String penerbit, int jumlahHalaman, int stok, int harga, String rak) {
         BukuEntity buku = cariBukubyJudul(judul);
         if (buku != null) {

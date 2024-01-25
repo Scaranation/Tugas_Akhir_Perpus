@@ -15,17 +15,18 @@ public class LoginController {
         adminModel = new AdminModel();
         adminView = new AdminView();
     }
-    public void loginAdmin(String username, String password) {
+    public boolean loginAdmin(String username, String password) {
         ArrayList<AdminEntity> listAdmin = new GsonModel<AdminEntity>("src/database/admin.json").readFromFile(new TypeToken<ArrayList<AdminEntity>>(){}.getType());
         if (listAdmin != null) {
             for (AdminEntity admin : listAdmin) {
                 if (admin.getUsername().equalsIgnoreCase(username) && admin.getPassword().equalsIgnoreCase(password)) {
                     System.out.println("========== Welcome Scaranation ==========");
                     adminView.menuAdmin();
-                    return;
+                    return true;
                 }
             }
         }
         System.out.println("Login Gagal");
+        return false;
     }
 }
