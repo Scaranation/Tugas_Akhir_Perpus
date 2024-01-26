@@ -8,7 +8,8 @@ import java.util.Scanner;
 public class PengunjungView {
     Scanner input = new Scanner(System.in);
     PerpustakaanController objPerpustakaan = new PerpustakaanController();
-    public void menuPengunjung(){
+
+    public void menuPengunjung() {
         String pilih;
         do {
             System.out.println("""
@@ -19,18 +20,20 @@ public class PengunjungView {
                     2. Exit
                     ====================================
                     """);
-            System.out.print("Pilih Menu : "); pilih = input.nextLine();
-            switch (pilih){
+            System.out.print("Pilih Menu : ");
+            pilih = input.nextLine();
+            switch (pilih) {
                 case "1" -> menuCari();
                 case "2" -> System.out.println("Terima kasih");
                 default -> System.out.println("Menu Tidak Ada");
             }
-        }while (!pilih.equals("2"));
+        } while (!pilih.equals("2"));
     }
-    public void menuCari(){
-        try{
+
+    public void menuCari() {
+        try {
             String pilih;
-            do{
+            do {
                 System.out.println("""
                         ====================================
                                    Menu Cari Buku          
@@ -41,8 +44,9 @@ public class PengunjungView {
                         4. Exit
                         ====================================
                         """);
-                System.out.print("Pilih Menu : "); pilih = input.nextLine();
-                switch (pilih){
+                System.out.print("Pilih Menu : ");
+                pilih = input.nextLine();
+                switch (pilih) {
                     case "1" -> {
                         System.out.print("Masukkan Judul Buku : ");
                         String judul = input.nextLine();
@@ -61,57 +65,60 @@ public class PengunjungView {
                     case "4" -> System.out.println("Terima kasih");
                     default -> System.out.println("Menu Tidak Ada");
                 }
-            }while (!pilih.equals("4"));
-        }catch (Exception e){
+            } while (!pilih.equals("4"));
+        } catch (Exception e) {
             input.nextLine();
         }
     }
-    public void CariBukubyJudul (String judul){
+
+    public void CariBukubyJudul(String judul) {
         BukuEntity buku = objPerpustakaan.cariBukubyJudul(judul);
-            if (buku != null){
-                System.out.println("============================");
-                System.out.println("          Detail Buku       ");
-                System.out.println("============================");
-                System.out.println("Rak :"+buku.getRak());
-                System.out.println("Judul     :"+buku.getJudul());
-                System.out.println("Pengarang :"+buku.getPengarang());
-                System.out.println("Penerbit  :"+buku.getPenerbit());
-                System.out.println("\n============================");
-            }else{
-                System.out.println("Buku Tidak DItemukan");
-            }
-
-    }
-    public void CariBukubyPengarang (String pengarang){
-        BukuEntity buku = objPerpustakaan.cariBukubyPengarang(pengarang);
-            if (buku != null){
-                System.out.println("============================");
-                System.out.println("          Detail Buku       ");
-                System.out.println("============================");
-                System.out.println("Rak :"+buku.getRak());
-                System.out.println("Judul     :"+buku.getJudul());
-                System.out.println("Pengarang :"+buku.getPengarang());
-                System.out.println("Penerbit  :"+buku.getPenerbit());
-                System.out.println("\n============================");
-            }else{
-                System.out.println("Buku Tidak DItemukan");
-            }
-
-    }
-    public void CariBukubyPenerbit (String penerbit){
-        BukuEntity buku = objPerpustakaan.cariBukubyPenerbit(penerbit);
-            if (buku != null){
-                System.out.println("============================");
-                System.out.println("          Detail Buku       ");
-                System.out.println("============================");
-                System.out.println("Rak :"+buku.getRak());
-                System.out.println("Judul     :"+buku.getJudul());
-                System.out.println("Pengarang :"+buku.getPengarang());
-                System.out.println("Penerbit  :"+buku.getPenerbit());
-                System.out.println("\n============================");
-            }else{
-                System.out.println("Buku Tidak DItemukan");
-            }
+        if (buku != null) {
+            System.out.println("============================");
+            System.out.println("          Detail Buku       ");
+            System.out.println("============================");
+            System.out.println("Rak :" + buku.getRak());
+            System.out.println("Judul     :" + buku.getJudul());
+            System.out.println("Pengarang :" + buku.getPengarang());
+            System.out.println("Penerbit  :" + buku.getPenerbit());
+            System.out.println("\n============================");
+        } else {
+            System.out.println("Buku Tidak DItemukan");
         }
+
+    }
+
+    public void CariBukubyPengarang(String pengarang) {
+        BukuEntity buku = objPerpustakaan.cariBukubyPengarang(pengarang);
+        if (buku != null) {
+            System.out.println("============================");
+            System.out.println("          Detail Buku       ");
+            System.out.println("============================");
+            System.out.println("Rak :" + buku.getRak());
+            System.out.println("Judul     :" + buku.getJudul());
+            System.out.println("Pengarang :" + buku.getPengarang());
+            System.out.println("Penerbit  :" + buku.getPenerbit());
+            System.out.println("\n============================");
+        } else {
+            System.out.println("Buku Tidak DItemukan");
+        }
+
+    }
+
+    public void CariBukubyPenerbit(String penerbit) {
+        BukuEntity buku = objPerpustakaan.cariBukubyPenerbit(penerbit);
+        if (buku != null) {
+            System.out.println("============================");
+            System.out.println("          Detail Buku       ");
+            System.out.println("============================");
+            System.out.println("Rak :" + buku.getRak());
+            System.out.println("Judul     :" + buku.getJudul());
+            System.out.println("Pengarang :" + buku.getPengarang());
+            System.out.println("Penerbit  :" + buku.getPenerbit());
+            System.out.println("\n============================");
+        } else {
+            System.out.println("Buku Tidak DItemukan");
+        }
+    }
 }
 

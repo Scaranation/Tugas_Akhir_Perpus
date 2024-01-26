@@ -1,9 +1,6 @@
-import controller.AdminController;
 import controller.LoginController;
-import view.AdminView;
 import view.PengunjungView;
 
-import java.awt.*;
 import java.util.Scanner;
 
 public class Main {

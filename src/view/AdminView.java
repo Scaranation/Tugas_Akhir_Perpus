@@ -121,4 +121,7 @@ public class AdminView {
             input.nextLine();
         }
     }
+
+    public void setVisible(boolean b) {
+    }
 }
